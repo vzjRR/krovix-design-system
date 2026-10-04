@@ -1,0 +1,25 @@
+{
+  "name": "@krovix/design-system",
+  "version": "0.1.0",
+  "description": "Krovix themes, tokens, fonts, icons and framework-independent UI patterns",
+  "type": "module",
+  "license": "UNLICENSED",
+  "repository": { "type": "git", "url": "https://github.com/vzjRR/krovix-design-system.git" },
+  "files": ["src", "assets", "tokens", "docs", "notices", "SOURCE.json", "README.md"],
+  "exports": {
+    ".": "./src/index.js",
+    "./styles.css": "./src/styles/index.css",
+    "./overlays.css": "./src/styles/overlays.css",
+    "./event-studio.css": "./src/styles/event-studio.css",
+    "./tokens.json": "./tokens/tokens.json",
+    "./assets/*": "./assets/*",
+    "./themes/*": "./src/themes/*"
+  },
+  "sideEffects": ["**/*.css"],
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node scripts/check.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

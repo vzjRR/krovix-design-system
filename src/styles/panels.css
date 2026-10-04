@@ -1,0 +1,84 @@
+/* Shared panels, cards, navigation, forms and shape treatments. */
+:where(.krovix) .modal { position: fixed; inset: 0; display: grid; place-items: center; background: rgba(4, 5, 9, .55); z-index: 50; }
+:where(.krovix) .shell { position: relative; isolation: isolate; width: min(1180px, 94vw); height: min(760px, 90vh); background: var(--shell-bg); border: 1px solid var(--edge);
+    border-radius: var(--radius-lg); box-shadow: var(--shadow); display: flex; flex-direction: column; overflow: hidden; }
+:where(.krovix) .shell::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--art) center / cover no-repeat; opacity: var(--art-opacity); }
+:where(.krovix) .shell-head { display: flex; align-items: center; gap: 14px; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--head-bg); }
+:where(.krovix) .brand { display: flex; align-items: center; gap: 10px; }
+:where(.krovix) .brand .logo { width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--grad-accent); display: grid; place-items: center; font-weight: 900; color: var(--accent-text); overflow: hidden; flex-shrink: 0; }
+:where(.krovix) .brand .logo img { width: 100%; height: 100%; object-fit: contain; }
+:where(.krovix) .brand .logo.has-img { background: transparent; clip-path: none; }
+:where(.krovix) .brand h1 { font-size: 15px; font-weight: 800; line-height: 1.15; letter-spacing: .06em; text-transform: uppercase; }
+:where(.krovix) .brand small { display: block; color: var(--text-faint); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+:where(.krovix) .tabs { display: flex; gap: 4px; margin-inline-start: 18px; }
+:where(.krovix) .tab { padding: 8px 14px; border-radius: 9px; color: var(--text-dim); font-weight: 600; }
+:where(.krovix) .tab:hover { color: var(--text); background: var(--panel-2); }
+:where(.krovix) .tab.active { color: var(--accent-text); background: var(--grad-accent); font-weight: 800; }
+:where(.krovix) .close-x { margin-inline-start: auto; width: 34px; height: 34px; border-radius: var(--radius-sm); color: var(--accent); border: 1px solid var(--line-strong); display: grid; place-items: center; flex-shrink: 0; }
+:where(.krovix) .close-x:hover { background: var(--accent-soft); color: var(--text); }
+:where(.krovix) .shell-body { flex: 1; display: flex; min-height: 0; }
+:where(.krovix) .scroll { overflow: auto; }
+:where(.krovix) .pad { padding: 20px 22px; }
+:where(.krovix) .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+:where(.krovix) .card { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; cursor: pointer; transition: border-color .12s, transform .12s; display: flex; flex-direction: column; }
+:where(.krovix) .card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+:where(.krovix) .card.selected { border-color: var(--accent); box-shadow: var(--glow); }
+:where(.krovix) .card-banner { height: 80px; position: relative; background: linear-gradient(135deg, var(--c, var(--accent)) -20%, transparent 85%), var(--panel-3); background-size: cover; background-position: center; }
+:where(.krovix) .card-banner .icon { position: absolute; inset-inline-start: 14px; bottom: -20px; width: 46px; height: 46px; border-radius: var(--radius); display: grid; place-items: center;
+    background: var(--icon-bg); color: var(--icon-ink); border: 1.5px solid var(--icon-edge); box-shadow: 0 6px 16px rgba(0,0,0,.4); }
+:where(.krovix) .card-banner .chip { position: absolute; inset-inline-end: 12px; top: 12px; }
+:where(.krovix) .card-body { padding: 24px 14px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+:where(.krovix) .card-title { font-weight: 800; font-size: 15px; }
+:where(.krovix) .card-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; font-size: 12px; color: var(--text-dim); }
+:where(.krovix) .card-meta b { color: var(--text); font-weight: 700; }
+:where(.krovix) .card-foot { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 6px; }
+:where(.krovix) .fill { height: 4px; border-radius: 4px; background: var(--panel-3); overflow: hidden; flex: 1; }
+:where(.krovix) .fill i { display: block; height: 100%; background: var(--grad-accent); }
+:where(.krovix) .section-title { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--text-faint); font-weight: 800; margin: 4px 0 12px; }
+:where(.krovix) .detail { width: 380px; border-inline-start: 1px solid var(--line); display: flex; flex-direction: column; }
+:where(.krovix) .detail h2 { font-size: 19px; line-height: 1.25; }
+:where(.krovix) .kv { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 13px; }
+:where(.krovix) .kv span { color: var(--text-faint); }
+:where(.krovix) .list-plain { display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+:where(.krovix) .upcoming-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 8px; }
+:where(.krovix) .upcoming-row .when { width: 120px; font-weight: 800; }
+:where(.krovix) .upcoming-row .when small { display: block; color: var(--text-faint); font-weight: 600; }
+:where(.krovix) .side { width: 210px; border-inline-end: 1px solid var(--line); padding: 12px 10px; display: flex; flex-direction: column; gap: 2px; }
+:where(.krovix) .nav { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px; color: var(--text-dim); font-weight: 600; text-align: start; }
+:where(.krovix) .nav:hover { background: var(--panel-2); color: var(--text); }
+:where(.krovix) .nav.active { background: var(--accent-soft); color: var(--text); box-shadow: inset 3px 0 0 var(--accent); }
+:where(.krovix:dir(rtl)) .nav.active { box-shadow: inset -3px 0 0 var(--accent); }
+:where(.krovix) .nav .ico { width: 18px; text-align: center; }
+:where(.krovix) .side .foot { margin-top: auto; font-size: 11px; color: var(--text-faint); padding: 8px 12px; }
+:where(.krovix) .main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+:where(.krovix) .main-head { display: flex; align-items: center; gap: 10px; padding: 16px 22px; border-bottom: 1px solid var(--line); }
+:where(.krovix) .main-head h2 { font-size: 18px; }
+:where(.krovix) .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
+:where(.krovix) .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+:where(.krovix) .stat b { display: block; font-size: 26px; font-weight: 800; }
+:where(.krovix) .stat span { color: var(--text-faint); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+:where(.krovix) .box { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+:where(.krovix) .box-head { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line); font-weight: 700; }
+:where(.krovix) .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+:where(.krovix) .form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 16px; }
+:where(.krovix) .field { display: flex; flex-direction: column; gap: 5px; }
+:where(.krovix) .field.full { grid-column: 1 / -1; }
+:where(.krovix) .field label { font-size: 12px; font-weight: 600; color: var(--text-dim); }
+:where(.krovix) .field .help { font-size: 11px; color: var(--text-faint); }
+:where(.krovix) .field.check { flex-direction: row; align-items: center; gap: 10px; }
+:where(.krovix) .fieldset { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 14px; margin-top: 4px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--text-faint); }
+:where(.krovix) .controls { display: flex; flex-wrap: wrap; gap: 6px; }
+:where(.krovix) .log-line { font-family: var(--font-mono); font-size: 12px; padding: 6px 14px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 140px 80px 180px 1fr; gap: 10px; user-select: text; }
+:where(.krovix) .lvl-security { color: var(--bad); }
+:where(.krovix) .lvl-audit { color: var(--accent-2); }
+:where(.krovix) .lvl-lifecycle { color: var(--text-dim); }
+:where(.krovix) .bracket { display: flex; gap: 24px; overflow: auto; padding: 8px 0; }
+:where(.krovix) .bracket .round { display: flex; flex-direction: column; justify-content: space-around; gap: 10px; min-width: 190px; }
+:where(.krovix) .match { background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; font-size: 12px; }
+:where(.krovix) .match div { padding: 6px 10px; display: flex; justify-content: space-between; }
+:where(.krovix) .match div + div { border-top: 1px solid var(--line); }
+:where(.krovix) .match .w { color: var(--good); font-weight: 800; }
+:where(.krovix) .point-list { max-height: 180px; overflow: auto; font-family: var(--font-mono); font-size: 12px; }
+:where(.krovix[data-shape="cut"]) .shell { clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut)); }
+:where(.krovix[data-shape="cut"]) :is(.card, .erow, .box, .stat, .theme-card, .layout-card, .upcoming-row) { clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px); }
+:where(.krovix[data-shape="cut"]) :is(.btn.primary, .tab.active, .badge, .badge-lg, .card-banner .icon, .brand .logo) { clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); }

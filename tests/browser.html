@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Krovix browser checks</title><link rel="stylesheet" href="../src/styles/index.css"></head>
+<body>
+  <h1>Browser integration checks</h1><ol id="results"></ol>
+  <button id="outside" class="btn">Unscoped host button</button>
+  <div id="a"></div><div id="b"></div>
+  <script type="module">
+    import { h, button, field, progress, card, applyTheme, icon } from '../src/index.js';
+    const results = document.querySelector('#results');
+    let failed = 0;
+    function check(label, run) {
+      try { if (!run()) throw new Error('Assertion failed'); results.append(h('li', 'PASS: ' + label)); }
+      catch (error) { failed++; results.append(h('li', 'FAIL: ' + label + ' (' + error.message + ')')); }
+    }
+    const a = document.querySelector('#a'), b = document.querySelector('#b');
+    applyTheme('krovix-gilded', { root: a });
+    applyTheme('krovix-sapphire', { root: b });
+    check('Independent theme tokens', () => getComputedStyle(a).getPropertyValue('--accent').trim() === '#d4b26a' && getComputedStyle(b).getPropertyValue('--accent').trim() === '#3fb6c9');
+    const content = '<img src=x onerror=alert(1)>';
+    const sample = card({ title: content, description: content });
+    a.append(sample);
+    check('Text content never becomes executable markup', () => sample.querySelectorAll('img').length === 0 && sample.textContent.includes(content));
+    const disabled = button('Disabled', { disabled: true });
+    a.append(disabled);
+    check('Disabled buttons use the native attribute', () => disabled.disabled && disabled.type === 'button');
+    const input = field('Account', { id: 'account', help: 'Choose a name' });
+    a.append(input);
+    check('Input label and help are associated', () => input.querySelector('label').htmlFor === 'account' && input.querySelector('input').getAttribute('aria-describedby') === 'account-help');
+    const bar = progress(125, 100, 'Completion');
+    a.append(bar);
+    check('Progress clamps visible and accessible values', () => bar.getAttribute('aria-valuenow') === '100' && bar.querySelector('i').style.width === '100%');
+    check('Unknown icon names return null', () => icon('not-a-real-icon') === null);
+    check('Component CSS does not style unrelated host controls', () => getComputedStyle(document.querySelector('#outside')).display !== 'inline-flex');
+    applyTheme('krovix-obsidian', { root: a });
+    const shell = h('div.shell'); a.append(shell);
+    check('Cut theme applies the shell polygon', () => getComputedStyle(shell).clipPath.startsWith('polygon('));
+    applyTheme('light', { root: a, colors: { accent: '#f80' } });
+    applyTheme('classic', { root: a });
+    check('Removing overrides returns to inherited theme values', () => getComputedStyle(a).getPropertyValue('--accent').trim() === '#7c5cff');
+    document.title = failed ? `FAIL: ${failed} browser checks` : 'PASS: 9 browser checks';
+    results.setAttribute('data-failed', String(failed));
+  </script>
+</body>
+</html>

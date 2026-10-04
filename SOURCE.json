@@ -1,0 +1,160 @@
+{
+  "repository": "https://github.com/vzjRR/battle-royal-five-m",
+  "commit": "2ae9ae08f19bbf833e7e1e8153a14d510fb7987e",
+  "branch": "claude/event-studio-fivem-x11r93",
+  "extractedAt": "2026-10-04",
+  "files": [
+    {
+      "path": "event_studio/LICENSE.md",
+      "sha256": "8baa635958675fba0a8043aca3489151863e9c79efcc7c579f6d1340eaf85156"
+    },
+    {
+      "path": "event_studio/shared/themes.lua",
+      "sha256": "d846a508ff56018dc975f28610126409922bd2f128d3e8fc9a51fcc61e993f27"
+    },
+    {
+      "path": "event_studio/web/css/base.css",
+      "sha256": "4c057f63e368c5e7889579d28b29b67c2093c82dbd18e475c88612a6ef0f09c2"
+    },
+    {
+      "path": "event_studio/web/css/hud.css",
+      "sha256": "8a5ac3c6dbb63dc4bc1e88f70f63878a251779481a1553fd9d90dc718a381d50"
+    },
+    {
+      "path": "event_studio/web/css/panels.css",
+      "sha256": "ac71bffe46aafb2bef41fc67d73f6c62f9a9c0d24e9ab65781f090d43963ab71"
+    },
+    {
+      "path": "event_studio/web/fonts/OFL.txt",
+      "sha256": "1a4fee145127bdbe4ee1a8eece6e731c3d2ea32c42de6b4132dfdaf5f60593a8"
+    },
+    {
+      "path": "event_studio/web/fonts/barlow-400.woff2",
+      "sha256": "b0a8ad37ac45f5fb22ced461576db72e44e295107aad7a9c8a7a4bad728fd03b"
+    },
+    {
+      "path": "event_studio/web/fonts/barlow-600.woff2",
+      "sha256": "4b52ddd4836b592df0e4832b8286956883cdc651b015126bdd18f184b7f90cc3"
+    },
+    {
+      "path": "event_studio/web/fonts/barlow-700.woff2",
+      "sha256": "2d797dd8b35dcb3413e1af9d7052b3f4f8c341a147cdcb01f4f06af80db53289"
+    },
+    {
+      "path": "event_studio/web/fonts/barlow-semi-condensed-400.woff2",
+      "sha256": "d03a7a5f6b74534c80699289d4f6495fdb09a7596774a4ede79129d2f8bb67b1"
+    },
+    {
+      "path": "event_studio/web/fonts/barlow-semi-condensed-600.woff2",
+      "sha256": "f158417e9207b5362f9b71a2fe779ce5bb836ad972f38445c3163af39d2c998d"
+    },
+    {
+      "path": "event_studio/web/fonts/barlow-semi-condensed-700.woff2",
+      "sha256": "fb958c8c20a05552ac8a85d925d96028d52565792650e941a5fe96b6997aa5cb"
+    },
+    {
+      "path": "event_studio/web/fonts/chakra-petch-600.woff2",
+      "sha256": "a5888696e9eb1b4bbbecc8eb3922b8369f49d4bddb72263e033cbd17f399be76"
+    },
+    {
+      "path": "event_studio/web/fonts/chakra-petch-700.woff2",
+      "sha256": "ce5095dc1cb200aaa939e38067a0677018d10e9f26ec38cdcf1557ac524fc775"
+    },
+    {
+      "path": "event_studio/web/fonts/fonts.css",
+      "sha256": "81364b61f2a3a3e3afbd704856e4126224528fad0421dabea9ab97beb5cea11d"
+    },
+    {
+      "path": "event_studio/web/fonts/manrope-400.woff2",
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+    },
+    {
+      "path": "event_studio/web/fonts/oxanium-600.woff2",
+      "sha256": "3aa555c528430aab19bb2693dc206bab557767d3082dba66400784c9cc90cfbb"
+    },
+    {
+      "path": "event_studio/web/fonts/syncopate-700.woff2",
+      "sha256": "8a462650535a7d255dd037dc3ca7eefde4b2b988bb110736290dbd7b74a83fea"
+    },
+    {
+      "path": "event_studio/web/img/app-icon.png",
+      "sha256": "63fa10f8446eb9a5745dbe16c690275e5e9c002a2464fc2d8bd8cf0d60b66ce6"
+    },
+    {
+      "path": "event_studio/web/img/art/gilded.svg",
+      "sha256": "07496c8f8b58498e97235ad403eab0709568ef383249cd393d22c29205de3a9e"
+    },
+    {
+      "path": "event_studio/web/img/art/grid.svg",
+      "sha256": "f2c448ee2b75868983c1512381b387416bae8ec8be1fbfa063c8bf92771d1142"
+    },
+    {
+      "path": "event_studio/web/img/art/sapphire.svg",
+      "sha256": "cd9c43cf06de9a54a59da85f7ef6a6e3bcdc7223b6c48117a688ceb8db7f7076"
+    },
+    {
+      "path": "event_studio/web/img/krovix-badge.png",
+      "sha256": "6a55ea0d4162c891a25d77b95b8339be5339f0d4d1e1e7e5d54e942059f30160"
+    },
+    {
+      "path": "event_studio/web/img/krovix-gold.png",
+      "sha256": "efb2109b1e5004f948e93a3bfee11a89bf144520c05c11642a5e7e49a600567d"
+    },
+    {
+      "path": "event_studio/web/img/krovix-mark.png",
+      "sha256": "5c1e4319b58837af4d60b75d561f48e256afb65aaa4bc5dcde6247a538b3d913"
+    },
+    {
+      "path": "event_studio/web/img/logo.svg",
+      "sha256": "bd0cccb1297e9a7fb8e02bb8103f90284631ce2a674f1f9e2205f97105b9c01f"
+    },
+    {
+      "path": "event_studio/web/js/icons.js",
+      "sha256": "c0782887fb06299e5c9089af3f70e300cae6f964df5aa83786487fed493c5ada"
+    },
+    {
+      "path": "event_studio/web/js/theme.js",
+      "sha256": "54a7c3c1e89e35fffef788540bf53c44a42f54f6d0abce293024b59b8cb51e1c"
+    },
+    {
+      "path": "event_studio/web/js/ui.js",
+      "sha256": "febb259d553e42a65c367278e220bfa3bd008a3a89aed88fd2c2102915c0dfa8"
+    },
+    {
+      "path": "event_studio/web/themes/base.css",
+      "sha256": "52a2577b684877a51d29a52fcb329c86e0aa7cc4600b5231a1aa5ba24f503934"
+    },
+    {
+      "path": "event_studio/web/themes/classic.css",
+      "sha256": "225fd6e75e576eccb340f251ff1224961328f52aa8836d8ab955b9e169a7da0e"
+    },
+    {
+      "path": "event_studio/web/themes/krovix-arctic.css",
+      "sha256": "827b3bad184b8a49ae21da7d8862e5f58bee3be1809c61aceb71be605e8f04ff"
+    },
+    {
+      "path": "event_studio/web/themes/krovix-crimson.css",
+      "sha256": "f155c07bc2fc0e113191f05a5e8983a69b6b7d6be08d09ae92ee67d107bc7cdd"
+    },
+    {
+      "path": "event_studio/web/themes/krovix-emerald.css",
+      "sha256": "cff4e7e9a3cb432eae9a47f5043108b4fdfb22f867e727fd8d5c92d1b671ea8e"
+    },
+    {
+      "path": "event_studio/web/themes/krovix-gilded.css",
+      "sha256": "e3890146aae76fe07e046f7c92a907cb51bf2a3b2f004de7fa74fcbf9a1cf0d1"
+    },
+    {
+      "path": "event_studio/web/themes/krovix-obsidian.css",
+      "sha256": "4d3afc9414e89e8ca8449ae878ec5d79d0198d8208d586a4c33fba902f7920a1"
+    },
+    {
+      "path": "event_studio/web/themes/krovix-sapphire.css",
+      "sha256": "311ead5b3a3f87e403482649440d768974ed81ba44c1b00c5a515911b8f83dbf"
+    },
+    {
+      "path": "event_studio/web/themes/light.css",
+      "sha256": "c836b561b3cf5c91e74806b82716eb454b1de5dad2a436244958436421ac60cd"
+    }
+  ]
+}

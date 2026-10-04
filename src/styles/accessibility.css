@@ -1,0 +1,7 @@
+/* Additive portability and keyboard support. */
+:where(.krovix) :is(button, a, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+:where(.krovix) .btn:disabled { cursor: not-allowed; }
+:where(.krovix) .confirm .box { max-width: calc(100vw - 32px); }
+@media (prefers-reduced-motion: reduce) {
+  :where(.krovix) *, :where(.krovix) *::before, :where(.krovix) *::after { animation: none !important; transition: none !important; }
+}

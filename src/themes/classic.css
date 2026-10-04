@@ -1,0 +1,4 @@
+/* Krovix theme; original values preserved. */
+:where(.krovix[data-theme="classic"]) {
+    --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}

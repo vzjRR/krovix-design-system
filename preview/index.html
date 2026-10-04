@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="krovix" data-theme="krovix-gilded" data-shape="round" data-title="metal">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Krovix Design System</title>
+  <link rel="stylesheet" href="../src/styles/index.css">
+  <link rel="stylesheet" href="../src/styles/overlays.css">
+  <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+  <header class="catalog-head">
+    <a class="catalog-brand" href="#overview"><img src="../assets/krovix-mark.png" alt="Krovix"><span>KROVIX <small>DESIGN SYSTEM / 0.1</small></span></a>
+    <nav aria-label="Catalog"><a href="#themes">Themes</a><a href="#components">Components</a><a href="#icons">Icons</a><a href="#tokens">Tokens</a></nav>
+    <div class="catalog-tools"><label class="sr-only" for="theme-select">Color theme</label><select id="theme-select"></select><button class="btn ghost sm" id="direction" type="button" aria-pressed="false">RTL</button></div>
+  </header>
+  <main>
+    <section class="hero" id="overview">
+      <div class="hero-copy"><p class="eyebrow">KROVIX TEAM / BRAND & INTERFACE</p><h1 class="display">Built to<br>stand apart.</h1><p class="hero-description muted">Eight visual themes. One shared language.<br>Everything you need to build the next Krovix experience.</p><div class="row hero-actions"><a class="btn primary" href="#components">Explore components <span aria-hidden="true">↗</span></a><a class="btn ghost" href="#tokens">View tokens</a></div><div class="hero-counts"><span><b>08</b> themes</span><span><b>40</b> icons</span><span><b>52</b> base tokens</span></div></div>
+      <div class="hero-stage"><div class="stage-label eyebrow">INTERFACE STUDY / <span id="active-name">GILDED</span></div><div class="hero-window shell"><div class="shell-head"><div class="brand"><div class="logo has-img"><img id="theme-logo" src="../assets/krovix-mark.png" alt="Krovix mark"></div><div><h1 class="display">Krovix Studio</h1><small>A shared design language</small></div></div><span class="chip live">Ready</span></div><div class="stage-content"><div class="stage-heading"><div><p class="eyebrow">WORKSPACE</p><h2 class="display">Your next idea.</h2></div><span id="stage-icon" class="badge-lg"></span></div><p class="muted">Clear hierarchy, expressive surfaces, and a signature accent.</p><div class="stage-stats" id="stage-stats"></div><div class="stage-footer"><div class="col"><span class="faint">System status</span><span class="row"><i class="status-dot"></i> All systems ready</span></div><button class="btn primary" id="demo-action" type="button">Create project</button></div></div></div><div class="floating-note hud-card"><div class="row"><span class="badge-sm" id="note-icon"></span><b>Made for Krovix.</b></div><p class="muted">Reusable across every product.</p></div></div>
+    </section>
+    <section id="themes"><div class="section-head"><div><p class="eyebrow">01 / VISUAL IDENTITIES</p><h2 class="display">Choose your atmosphere.</h2></div><p class="muted">Six signature themes, plus Classic and Light.</p></div><div id="theme-grid" class="catalog-theme-grid"></div></section>
+    <section id="components"><div class="section-head"><div><p class="eyebrow">02 / BUILDING BLOCKS</p><h2 class="display">The essentials, together.</h2></div><p class="muted">Consistent controls, states, and surfaces.</p></div><div class="component-grid">
+      <article class="specimen"><div class="specimen-head"><h3>Buttons</h3><span>01</span></div><div class="specimen-body"><div id="buttons" class="controls"></div><p class="faint specimen-caption">Primary / secondary / semantic / disabled</p></div></article>
+      <article class="specimen"><div class="specimen-head"><h3>State & feedback</h3><span>02</span></div><div class="specimen-body"><div id="chips" class="controls"></div><div class="toast success sample-toast" role="status">Your changes have been saved.</div></div></article>
+      <article class="specimen"><div class="specimen-head"><h3>Form controls</h3><span>03</span></div><div class="specimen-body"><div id="fields" class="col"></div><label class="row check-label"><input type="checkbox" checked> Enable notifications</label></div></article>
+      <article class="specimen"><div class="specimen-head"><h3>Typography</h3><span>04</span></div><div class="specimen-body type-specimen"><p class="eyebrow">EYEBROW / 11PX</p><h3 class="display">Distinct by design.</h3><p class="muted">Body text brings clarity to every interaction.</p><p class="mono accent">0123456789 / Aa Bb Cc</p><span class="faint" id="font-label"></span></div></article>
+      <article class="specimen component-wide"><div class="specimen-head"><h3>Cards & progress</h3><span>05</span></div><div class="specimen-body"><div id="cards" class="cards"></div></div></article>
+      <article class="specimen"><div class="specimen-head"><h3>Metrics & HUD</h3><span>06</span></div><div class="specimen-body"><div class="hud-card"><div class="hud-head"><span class="badge" id="hud-icon"></span><div><p class="hud-title">Session overview</p><p class="hud-sub">LIVE SESSION</p></div><span class="hud-timer">04:32</span></div><p class="hud-objective">Make every moment count.</p><div class="hud-stats"><div class="hud-stat"><b>24</b><span>Members</span></div><div class="hud-stat"><b>08</b><span>Projects</span></div><div class="hud-stat"><b>92%</b><span>Complete</span></div></div></div></div></article>
+      <article class="specimen"><div class="specimen-head"><h3>Navigation & table</h3><span>07</span></div><div class="specimen-body"><div class="tabs sample-tabs" aria-label="Sample views"><button type="button" class="tab active" aria-pressed="true">Overview</button><button type="button" class="tab" aria-pressed="false">Activity</button><button type="button" class="tab" aria-pressed="false">Members</button></div><table class="tbl"><thead><tr><th>Name</th><th>Status</th><th class="num">Score</th></tr></thead><tbody><tr><td>Atlas</td><td>Ready</td><td class="num">2,480</td></tr><tr><td>Nova</td><td>Active</td><td class="num">1,920</td></tr><tr><td>Orbit</td><td>Ready</td><td class="num">1,640</td></tr></tbody></table></div></article>
+    </div></section>
+    <section id="icons"><div class="section-head"><div><p class="eyebrow">03 / ICONOGRAPHY</p><h2 class="display">A precise visual vocabulary.</h2></div><label class="icon-search"><span class="sr-only">Search icons</span><input type="search" id="icon-search" placeholder="Search 40 icons…"></label></div><div id="icon-grid" class="icon-grid"></div><p id="icon-empty" class="empty hidden">No matching icons.</p></section>
+    <section id="tokens"><div class="section-head"><div><p class="eyebrow">04 / FOUNDATIONS</p><h2 class="display">Every detail has a token.</h2></div><label class="color-control">Accent override <input id="accent-color" type="color" value="#d4b26a"><button id="reset-accent" class="btn ghost sm" type="button">Reset</button></label></div><div id="color-tokens" class="color-token-grid"></div><details class="token-details"><summary>Inspect all 52 tokens</summary><div class="token-table-wrap"><table class="tbl"><thead><tr><th>Token</th><th>Computed value</th></tr></thead><tbody id="token-rows"></tbody></table></div></details><div class="integration-box"><div><p class="eyebrow">READY TO BUILD</p><h3 class="display">Start with one container.</h3><p class="muted">Use the CSS with any framework. Add the JavaScript helpers when you need them.</p></div><pre><code>import '@krovix/design-system/styles.css';
+import { applyTheme } from '@krovix/design-system';
+
+applyTheme('krovix-gilded', {
+  root: document.querySelector('#app')
+});</code></pre></div></section>
+    <section class="brand-assets"><div><p class="eyebrow">05 / BRAND ASSETS</p><h2 class="display">The Krovix signature.</h2><p class="muted">Original marks, bundled fonts, and theme artwork.</p></div><div class="asset-list"><figure><img src="../assets/krovix-mark.png" alt="Krovix primary mark"><figcaption>Primary mark</figcaption></figure><figure><img src="../assets/krovix-badge.png" alt="Krovix badge"><figcaption>Badge</figcaption></figure><figure><img src="../assets/krovix-gold.png" alt="Krovix gold mark"><figcaption>Gold mark</figcaption></figure></div></section>
+  </main>
+  <footer class="catalog-footer"><span>KROVIX TEAM © 2026</span><span>DESIGN SYSTEM / V0.1.0</span><a href="https://github.com/vzjRR/krovix-design-system">GitHub ↗</a></footer>
+  <div id="feedback" role="status" aria-live="polite" class="catalog-feedback hidden"></div>
+  <script type="module" src="catalog.js"></script>
+</body>
+</html>
