@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><title>Krovix browser checks</title><link rel="stylesheet" href="../src/styles/index.css"></head>
+<head><meta charset="utf-8"><title>Krovix browser checks</title><link rel="stylesheet" href="../src/styles/index.css"><link rel="stylesheet" href="../src/styles/command-deck.css"></head>
 <body>
   <h1>Browser integration checks</h1><ol id="results"></ol>
   <button id="outside" class="btn">Unscoped host button</button>
   <div id="a"></div><div id="b"></div>
   <script type="module">
-    import { h, button, field, progress, card, applyTheme, icon } from '../src/index.js';
+    import { h, button, field, progress, card, applyTheme, icon, themes, animateModule, cancelMotion } from '../src/index.js';
     const results = document.querySelector('#results');
     let failed = 0;
     function check(label, run) {
@@ -38,7 +38,27 @@
     applyTheme('light', { root: a, colors: { accent: '#f80' } });
     applyTheme('classic', { root: a });
     check('Removing overrides returns to inherited theme values', () => getComputedStyle(a).getPropertyValue('--accent').trim() === '#7c5cff');
-    document.title = failed ? `FAIL: ${failed} browser checks` : 'PASS: 9 browser checks';
+    const deck = h('div.kd-shell', h('nav.kd-nav', h('button.kd-command', { 'aria-current': 'page' }, 'Operations')),
+      h('div.kd-instruments', h('div.kd-instrument', h('b', '0'), h('span', 'Active'))));
+    a.append(deck);
+    check('Command Deck uses each theme without mutating a sibling container', () => {
+      for (const theme of themes) {
+        applyTheme(theme.id, { root: a });
+        if (getComputedStyle(deck).color !== getComputedStyle(a).color) return false;
+        if (getComputedStyle(deck).borderTopWidth !== '3px') return false;
+      }
+      return b.dataset.theme === 'krovix-sapphire';
+    });
+    check('Command navigation exposes selection with inherited RTL', () => {
+      a.dir = 'rtl';
+      return getComputedStyle(deck.querySelector('.kd-command')).direction === 'rtl' && deck.querySelector('[aria-current="page"]') !== null;
+    });
+    check('Optional motion cancellation releases the animation immediately', () => {
+      const animation = animateModule(deck);
+      cancelMotion(deck);
+      return animation === null || animation.playState === 'idle';
+    });
+    document.title = failed ? `FAIL: ${failed} browser checks` : 'PASS: 12 browser checks';
     results.setAttribute('data-failed', String(failed));
   </script>
 </body>

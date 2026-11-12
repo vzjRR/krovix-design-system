@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="../src/styles/index.css">
   <link rel="stylesheet" href="../src/styles/overlays.css">
   <link rel="stylesheet" href="catalog.css">
+  <link rel="stylesheet" href="../src/styles/command-deck.css">
 </head>
 <body>
   <header class="catalog-head">
     <a class="catalog-brand" href="#overview"><img src="../assets/krovix-mark.png" alt="Krovix"><span>KROVIX <small>DESIGN SYSTEM / 0.1</small></span></a>
-    <nav aria-label="Catalog"><a href="#themes">Themes</a><a href="#components">Components</a><a href="#icons">Icons</a><a href="#tokens">Tokens</a></nav>
+    <nav aria-label="Catalog"><a href="#command-deck">Command Deck</a><a href="#themes">Themes</a><a href="#components">Components</a><a href="#icons">Icons</a><a href="#tokens">Tokens</a></nav>
     <div class="catalog-tools"><label class="sr-only" for="theme-select">Color theme</label><select id="theme-select"></select><button class="btn ghost sm" id="direction" type="button" aria-pressed="false">RTL</button></div>
   </header>
   <main>
@@ -20,6 +21,7 @@
       <div class="hero-copy"><p class="eyebrow">KROVIX TEAM / BRAND & INTERFACE</p><h1 class="display">Built to<br>stand apart.</h1><p class="hero-description muted">Eight visual themes. One shared language.<br>Everything you need to build the next Krovix experience.</p><div class="row hero-actions"><a class="btn primary" href="#components">Explore components <span aria-hidden="true">↗</span></a><a class="btn ghost" href="#tokens">View tokens</a></div><div class="hero-counts"><span><b>08</b> themes</span><span><b>40</b> icons</span><span><b>52</b> base tokens</span></div></div>
       <div class="hero-stage"><div class="stage-label eyebrow">INTERFACE STUDY / <span id="active-name">GILDED</span></div><div class="hero-window shell"><div class="shell-head"><div class="brand"><div class="logo has-img"><img id="theme-logo" src="../assets/krovix-mark.png" alt="Krovix mark"></div><div><h1 class="display">Krovix Studio</h1><small>A shared design language</small></div></div><span class="chip live">Ready</span></div><div class="stage-content"><div class="stage-heading"><div><p class="eyebrow">WORKSPACE</p><h2 class="display">Your next idea.</h2></div><span id="stage-icon" class="badge-lg"></span></div><p class="muted">Clear hierarchy, expressive surfaces, and a signature accent.</p><div class="stage-stats" id="stage-stats"></div><div class="stage-footer"><div class="col"><span class="faint">System status</span><span class="row"><i class="status-dot"></i> All systems ready</span></div><button class="btn primary" id="demo-action" type="button">Create project</button></div></div></div><div class="floating-note hud-card"><div class="row"><span class="badge-sm" id="note-icon"></span><b>Made for Krovix.</b></div><p class="muted">Reusable across every product.</p></div></div>
     </section>
+    <section id="command-deck"><div class="section-head"><div><p class="eyebrow">GAME INTERFACE / OPTIONAL COMPONENTS</p><h2 class="display">Command Deck.</h2></div><p class="muted">Switch modules, try Arabic, open a dialog and replay native motion.<br>Theme controls above apply here. Reduced motion follows your OS setting.</p></div><div id="command-deck-demo"></div></section>
     <section id="themes"><div class="section-head"><div><p class="eyebrow">01 / VISUAL IDENTITIES</p><h2 class="display">Choose your atmosphere.</h2></div><p class="muted">Six signature themes, plus Classic and Light.</p></div><div id="theme-grid" class="catalog-theme-grid"></div></section>
     <section id="components"><div class="section-head"><div><p class="eyebrow">02 / BUILDING BLOCKS</p><h2 class="display">The essentials, together.</h2></div><p class="muted">Consistent controls, states, and surfaces.</p></div><div class="component-grid">
       <article class="specimen"><div class="specimen-head"><h3>Buttons</h3><span>01</span></div><div class="specimen-body"><div id="buttons" class="controls"></div><p class="faint specimen-caption">Primary / secondary / semantic / disabled</p></div></article>
@@ -42,5 +44,6 @@ applyTheme('krovix-gilded', {
   <footer class="catalog-footer"><span>KROVIX TEAM © 2026</span><span>DESIGN SYSTEM / V0.1.0</span><a href="https://github.com/vzjRR/krovix-design-system">GitHub ↗</a></footer>
   <div id="feedback" role="status" aria-live="polite" class="catalog-feedback hidden"></div>
   <script type="module" src="catalog.js"></script>
+  <script type="module" src="command-deck.js"></script>
 </body>
 </html>

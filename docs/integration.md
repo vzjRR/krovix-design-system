@@ -94,3 +94,4 @@ import '@krovix/design-system/event-studio.css';
 Vendor the package files into the resource's `web/vendor/krovix/`, include them in `fxmanifest.lua`'s files list, and import the CSS and native modules using relative paths. Apply the system to the document root for a full NUI. Keep your application's transparent background, focus handling, message listener and NUI callbacks in the product itself. This library does not register callbacks, communicate with a server or infer resource names.
 
 The existing Event Studio is still using its original files. A migration must update imports, remove duplicate styles, adapt its theme registry and test the product before replacing those files.
+`@krovix/design-system/command-deck.css` adds optional game-window composition. See [Command Deck](game-interface.md) for classes, offline integration and theme/RTL behavior, and [motion](motion-system.md) for optional native transitions.

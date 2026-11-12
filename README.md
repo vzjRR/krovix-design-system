@@ -62,6 +62,10 @@ All control and panel styles are scoped beneath `.krovix`. Tokens live on that c
 | `preview/` | Interactive visual reference |
 | `SOURCE.json` | Original commit, file paths and SHA-256 provenance |
 
+## Command Deck
+
+Optional game-interface primitives provide a cut-corner shell, horizontal command navigation, instrument cluster, operational panels, rosters, timelines, empty states and native dialog styling. Import `@krovix/design-system/command-deck.css` after the base styles. Native motion is available from `@krovix/design-system/motion`. The interactive catalog includes English and Arabic examples with live theme switching and reduced-motion support. See [Game interfaces](docs/game-interface.md) and [Motion](docs/motion-system.md).
+
 ## Validation
 
 ```sh
