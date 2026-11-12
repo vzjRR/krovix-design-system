@@ -1,0 +1,70 @@
+/* Optional Command Deck primitives. Tokens and business behavior belong to the host. */
+.krovix.kd-shell, .krovix .kd-shell {
+    position: relative; isolation: isolate; min-inline-size: 0; overflow: hidden;
+    background: var(--shell-bg); color: var(--text); border: 1px solid var(--line-strong);
+    border-block-start: 3px solid var(--accent); border-radius: 0;
+    box-shadow: var(--shadow); font-family: var(--font);
+    clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 22px 100%, 0 calc(100% - 22px));
+}
+.krovix .kd-identity { display: flex; align-items: center; gap: 14px; padding: 18px 24px; border-block-end: 1px solid var(--line); background: var(--head-bg); }
+.krovix .kd-identity img { inline-size: 40px; block-size: 40px; object-fit: contain; }
+.krovix .kd-identity h1 { font: 700 19px var(--font-display); letter-spacing: .14em; margin: 0; }
+.krovix .kd-identity small, .krovix .kd-eyebrow { display: block; color: var(--text-dim); font: 11px var(--font-mono); letter-spacing: .13em; text-transform: uppercase; }
+.krovix .kd-identity .kd-controls { margin-inline-start: auto; }
+.krovix .kd-nav { display: flex; flex-wrap: wrap; gap: 0; padding: 0 16px; border-block-end: 1px solid var(--line-strong); background: var(--bg-solid); }
+.krovix .kd-command { position: relative; display: inline-flex; align-items: center; gap: 9px; flex: 1 0 auto; justify-content: center; min-block-size: 49px; padding: 9px 14px; border: 0; border-inline-end: 1px solid var(--line); background: transparent; color: var(--text-dim); font: 600 12px var(--font); cursor: pointer; transition: color 140ms ease, background-color 140ms ease; }
+.krovix .kd-command::after { content: ''; position: absolute; inset-inline: 10px; inset-block-end: 0; block-size: 2px; background: var(--accent); transform: scaleX(0); transition: transform 160ms ease; }
+.krovix .kd-command[aria-current="page"], .krovix .kd-command[aria-pressed="true"] { color: var(--text); background: var(--accent-soft); }
+.krovix .kd-command[aria-current="page"]::after, .krovix .kd-command[aria-pressed="true"]::after { transform: scaleX(1); }
+.krovix .kd-command:hover { color: var(--text); background: var(--panel-2); }
+.krovix .kd-command:focus-visible, .krovix .kd-controls > :focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+.krovix .kd-command small { font: 10px var(--font-mono); opacity: .7; }
+.krovix .kd-module-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px 28px 18px; }
+.krovix .kd-module-head h2 { margin: 6px 0 0; font: 600 clamp(24px, 3vw, 38px) var(--font-display); letter-spacing: -.03em; }
+.krovix .kd-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.krovix .kd-instruments { display: flex; flex-wrap: wrap; border-block: 1px solid var(--line-strong); background: var(--bg-solid); }
+.krovix .kd-instrument { position: relative; flex: 1 1 130px; padding: 16px 24px; border-inline-end: 1px solid var(--line); }
+.krovix .kd-instrument::before { content: ''; position: absolute; inset-inline-start: 0; inset-block: 15px; inline-size: 2px; background: var(--accent-2); }
+.krovix .kd-instrument b { display: block; font: 600 34px var(--font-display); font-variant-numeric: tabular-nums; line-height: 1; }
+.krovix .kd-instrument span { display: block; margin-block-start: 8px; color: var(--text-dim); font: 11px var(--font-mono); text-transform: uppercase; }
+.krovix .kd-operations { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(220px, 1fr); gap: 22px; padding: 24px 28px 28px; }
+.krovix .kd-panel { padding: 0; margin: 0; min-inline-size: 0; background: var(--panel); border-block-start: 2px solid var(--line-strong); }
+.krovix .kd-panel-head { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-block-end: 1px solid var(--line); font-weight: 700; }
+.krovix .kd-panel-head > :last-child:not(:first-child) { margin-inline-start: auto; }
+.krovix .kd-empty { position: relative; display: grid; place-content: center; min-block-size: 240px; padding: 28px; text-align: center; overflow: hidden; }
+.krovix .kd-empty > :not(.kd-art) { position: relative; z-index: 1; }
+.krovix .kd-empty h3 { margin: 12px 0 8px; font: 600 25px var(--font-display); }
+.krovix .kd-empty p { max-inline-size: 36ch; margin: 0 auto 20px; color: var(--text-dim); line-height: 1.6; }
+.krovix .kd-art { position: absolute; pointer-events: none; inset: 0; inline-size: 100%; block-size: 100%; opacity: .15; object-fit: cover; }
+.krovix .kd-roster { display: grid; gap: 1px; background: var(--line); }
+.krovix .kd-entry { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; padding: 16px 18px; background: var(--panel); border-inline-start: 3px solid transparent; }
+.krovix .kd-entry:hover { background: var(--panel-2); border-inline-start-color: var(--accent); }
+.krovix .kd-entry h3 { margin: 0 0 5px; font: 600 16px var(--font-display); }
+.krovix .kd-entry small { color: var(--text-dim); font: 11px var(--font-mono); }
+.krovix .kd-entry .kd-controls { margin-inline-start: auto; }
+.krovix .kd-status { display: inline-flex; align-items: center; gap: 7px; color: var(--text-dim); font: 11px var(--font-mono); }
+.krovix .kd-status::before { content: ''; inline-size: 6px; block-size: 6px; background: currentColor; }
+.krovix .kd-status[data-state="live"] { color: var(--good); }
+.krovix .kd-status[data-state="warning"] { color: var(--warn); }
+.krovix .kd-status[data-state="error"] { color: var(--bad); }
+.krovix .kd-timeline { margin: 18px; padding-inline-start: 18px; border-inline-start: 1px solid var(--line-strong); list-style: none; }
+.krovix .kd-timeline li { position: relative; padding-block: 0 22px; }
+.krovix .kd-timeline li::before { content: ''; position: absolute; inset-inline-start: -22px; inset-block-start: 5px; inline-size: 7px; block-size: 7px; background: var(--accent-2); }
+.krovix .kd-timeline time { display: block; color: var(--text-dim); margin-block-end: 6px; font: 11px var(--font-mono); font-variant-numeric: tabular-nums; }
+.krovix .kd-dialog { max-inline-size: 480px; padding: 24px; background: var(--panel); color: var(--text); border: 1px solid var(--line-strong); border-block-start: 3px solid var(--warn); box-shadow: var(--shadow); }
+.krovix .kd-dialog::backdrop { background: rgba(0, 0, 0, .65); }
+.krovix .kd-dialog h3 { margin-block-start: 0; font-family: var(--font-display); }
+.krovix .kd-dialog p { color: var(--text-dim); line-height: 1.6; }
+@media (max-width: 760px) {
+    .krovix .kd-operations { grid-template-columns: minmax(0, 1fr); padding: 16px; gap: 16px; }
+    .krovix .kd-identity, .krovix .kd-module-head { padding: 16px; }
+    .krovix .kd-module-head { flex-wrap: wrap; }
+    .krovix .kd-nav { padding: 0; }
+    .krovix .kd-command { flex: 1 1 30%; padding-inline: 8px; }
+    .krovix .kd-instrument { padding: 14px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .krovix .kd-command, .krovix .kd-command::after { transition: none; }
+}
+
+.krovix :lang(ar) .kd-eyebrow, .krovix :lang(ar) .kd-identity small, .krovix :lang(ar) .kd-instrument span, .krovix :lang(ar) .kd-status { letter-spacing: 0; font-family: "Segoe UI", Tahoma, sans-serif; }

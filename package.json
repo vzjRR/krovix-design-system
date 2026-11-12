@@ -11,6 +11,8 @@
     "./styles.css": "./src/styles/index.css",
     "./overlays.css": "./src/styles/overlays.css",
     "./event-studio.css": "./src/styles/event-studio.css",
+    "./command-deck.css": "./src/styles/command-deck.css",
+    "./motion": "./src/motion.js",
     "./tokens.json": "./tokens/tokens.json",
     "./assets/*": "./assets/*",
     "./themes/*": "./src/themes/*"
